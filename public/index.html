@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/4.6.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.6.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.6.2/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.6.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.6.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- Comienza  head pagina -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Servicios Juridicos Tijuana</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+    
+  </head>
+  <body>
+    
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+
+    <!--Comienza body pagina -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Inicio</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Acerca de nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong>Bienvenido a Servicios juridicos Tijuana</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5">
+              Nuestra firma esta confomando por un equipo de abogados en Tijuana profesionales
+              egresados de la facultad de derecho de la Universidad Autonoma de Baja California.
+            </p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Conocenos</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">¿Por que escogernos?</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4">
+              Deseamos brindarle la oportunidad de conocer de una manera amplia y sencilla
+              los servicios que ofrecemos en materia juridica, asi como nuestra forma de trabajar
+              en conjunto con nuestros clientes.
+
+              Ofrecemos un trato personal, amable y comunicacion directa, garantizando asi, su tranquilidad en todos
+              y cada uno de sus asuntos a llevar con nosotros.
+
+              Agradecemos de antemano su atencion.
+            </p>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Comienze ahora!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Servicios</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-child text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Divorcios</h3>
+              <p class="text-muted mb-0">
+                Divorcios voluntarios, por mutuo consentimiento, sin concentimiento
+                de algunas de las partes e incausado.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-bar-chart text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Custodia</h3>
+              <p class="text-muted mb-0">
+                Custodia unica y compartida.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-cutlery-o text-primary mb-3 sr-icons"></i>
+              <i class="fa fa-4x fa-cutlery text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Pension Alimenticia</h3>
+              <p class="text-muted mb-0">
+                Pension alimenticia Extrajudicial y judicial.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-balance-scale text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Contratos</h3>
+              <p class="text-muted mb-0">
+                Contratos tacticos, de plazo fijo, indefinido, d eprueba, por obra cierta,
+                por tarea, por destajo y eventual.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Convenios</h3>
+              <p class="text-muted mb-0">
+                Convenios Marco, de intercambio estudiantil, de doble Titulacion, de Colaboracion
+                Profesional e Investigativo.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-user-md text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Negligencia Medica</h3>
+              <p class="text-muted mb-0">
+                Negligencia medica Impericia, Imprudencia, Mala prescripcion de medicamentos, Omision de informacion al paciente, etc.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-blind text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Pension de retiro</h3>
+              <p class="text-muted mb-0">
+                Pension de Vejez, de Invalidez y Sobrevivencia.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-home text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Asuntos familiares</h3>
+              <p class="text-muted mb-0">
+                  Asuntos de lo familiar. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-0" id="portfolio">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters popup-gallery">
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--<section class="bg-dark text-white">
+      <div class="container text-center">
+        <h2 class="mb-4">Asesoria gratuita!</h2>
+        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Contactenos ahora!</a>
+      </div>
+    </section>-->
+    <section id="contact" class="map">
+      <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+      <br/>
+      <small>
+        <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+      </small>
+    </section>
+    
+     <section id="contact">
+      <div class="container">
+
+        
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Contactenos Ahora!</h2>
+            <hr class="my-4">
+            <p class="mb-5">
+              Estamos para servirle por diferentes medios; llamenos, mandenos un correo electronico para agendar
+              una cita en nuestras instalaciones.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+            <p>664-334-9534 y 664-503-4171</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">dyg.asociados90@gmail.com</a>
+            </p>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-lg-12 text-center">
+           <!-- <h2 class="section-heading text-uppercase">Contacto </h2>  -->
+           <br><br><br>
+            <h3 class="section-subheading text-muted">Envienos un mensaje y en breve nos comunicaremos con usted.</h3>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contactForm" name="sentMessage" action="mailto:omar.calderon@uabc.edu.mx" method="post" enctype="text/plain" >
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" id="name" type="text" placeholder="Nombre *" required data-validation-required-message="Please enter your name.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="email" type="email" placeholder="Correo *" required data-validation-required-message="Please enter your email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="phone" type="tel" placeholder="Telefono *" required data-validation-required-message="Please enter your phone number.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <textarea class="form-control" id="message" placeholder="Mensaje *" required data-validation-required-message="Please enter a message."></textarea>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <input id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit" value="Enviar mensaje">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <br><br>
+
+
+        
+      </div>
+    </section>
+
+    <section id="socialnetworks">
+     <!-- <div class="container">
+        <div class="row">
+            
+            <h2>Siguenos en nuestras redes sociales!</h2>
+            
+            <ul class="list-inline list-social">
+              <li class="list-inline-item social-twitter">
+                <a href="https://www.facebook.com/Divorcios-Tijuana-1124082081005433/">
+                  <i class="fa fa-4x fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item social-facebook">
+                <a href="https://www.facebook.com/JuridicosTijuana/">
+                  <i class="fa fa-4x fa-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item social-google-plus">
+                <a href="#">
+                  <i class="fa fa-4x fa-google-plus"></i>
+                </a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>-->
+       
+        <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+                <h2>Siguenos en nuestras redes sociales!</h2><br>
+            </div>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-lg-4 col-md-12 text-center">
+              <div class="service-box mt-5 mx-auto">
+                <a href="https://www.facebook.com/Divorcios-Tijuana-1124082081005433/">
+                  <i class="fa fa-4x fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12 text-center">
+                <div class="service-box mt-5 mx-auto">
+                    <a href="https://www.facebook.com/JuridicosTijuana/">
+                    <i class="fa fa-4x fa-facebook"></i>
+                  </a>
+                </div>
+              </div>
+            
+              <div class="col-lg-4 col-md-12 text-center">
+                  <div class="service-box mt-5 mx-auto">
+                   <a href="#"> 
+                    <i class="fa fa-4x fa-google-plus"></i>
+                  </a>
+                  </div>
+                </div>
+          
+          </div>
+       
+
+
+    </section>
+<!--
+
+
+    <section id="contact">
+      <div class="container">
+        
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Contactenos Ahora!</h2>
+            <hr class="my-4">
+            <p class="mb-5">
+              Estamos para servirle por diferentes medios; llamenos, mandenos un correo electronico para agendar
+              una cita en nuestras instalaciones.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+            <p>123-456-6789</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+
+
+  </body>
+</html>
