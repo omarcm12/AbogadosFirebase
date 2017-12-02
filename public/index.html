@@ -12,6 +12,7 @@
     
    <script src="./jquery-3.2.1.min.js"></script>
    <script src="./app.js"></script>
+   <link href="styles.css" rel="stylesheet">
 
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
     <!--<LINK REL=StyleSheet HREF="styles.css" T YPE="text/css" MEDIA=screen>-->
@@ -238,8 +239,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" style="height:250px; width:100%;" href="https://firebasestorage.googleapis.com/v0/b/serviciosjuridicostijuan-22adb.appspot.com/o/mis_fotos%2Fproyecto4?alt=media&token=f93092dd-bcd4-4261-a224-6d2094f757a1">
-              <img class="img-fluid" src="https://firebasestorage.googleapis.com/v0/b/serviciosjuridicostijuan-22adb.appspot.com/o/mis_fotos%2Fproyecto4?alt=media&token=f93092dd-bcd4-4261-a224-6d2094f757a1" />
+            <a class="portfolio-box" href="https://firebasestorage.googleapis.com/v0/b/serviciosjuridicostijuan-22adb.appspot.com/o/mis_fotos%2Fproyecto4?alt=media&token=f93092dd-bcd4-4261-a224-6d2094f757a1">
+            <img class="img-fluid" style="height:250px; width:100%;" src="https://firebasestorage.googleapis.com/v0/b/serviciosjuridicostijuan-22adb.appspot.com/o/mis_fotos%2Fproyecto4?alt=media&token=f93092dd-bcd4-4261-a224-6d2094f757a1" />
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded" id="txtCatPro4">
@@ -267,11 +268,12 @@
               </div>
             </a>
           </div>
+
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="https://firebasestorage.googleapis.com/v0/b/serviciosjuridicostijuan-22adb.appspot.com/o/mis_fotos%2Fproyecto6?alt=media&token=1e325bfe-44f0-4a07-b2d8-5052cd24c14d">
-              <img class="img-fluid" style="height:250px; width:100%;" src="https://firebasestorage.googleapis.com/v0/b/serviciosjuridicostijuan-22adb.appspot.com/o/mis_fotos%2Fproyecto6?alt=media&token=1e325bfe-44f0-4a07-b2d8-5052cd24c14d" />
+           <!-- <a class="portfolio-box">  -->
+              <img class="images" data-toggle="modal" data-target="#myModal"  style="height:250px; width:100%;" src="https://firebasestorage.googleapis.com/v0/b/serviciosjuridicostijuan-22adb.appspot.com/o/mis_fotos%2Fproyecto6?alt=media&token=1e325bfe-44f0-4a07-b2d8-5052cd24c14d" />
               <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
+               <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded" id="txtCatPro6">
                     
                   </div>
@@ -280,11 +282,11 @@
                   </div>
                 </div>
               </div>
-            </a>
+           <!-- </a>  -->
           </div>
         </div>
       </div>
-    </section>
+   </section>  
 
    
   <section id="mapa" class="map">
@@ -367,6 +369,27 @@
 
 
     </section>
+
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            
+            <h4 class="modal-title">Modal Header</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the modal.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
