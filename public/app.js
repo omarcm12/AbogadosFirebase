@@ -1,4 +1,4 @@
-      var feeDb;
+ var feeDb;
       $(document).ready( function (){
         var config = {
           apiKey: "AIzaSyChIQbw_7ULm55wqiLauek2SXDviUiHW-4",
@@ -57,3 +57,4 @@
         document.getElementById("txtNomPro6").innerHTML=dato.val().Titulo;
       }
     }
+
